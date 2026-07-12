@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+/* ============================================
+   ADIA — Custom Theme
+   ============================================ */
+@theme inline {
+  /* Brand Colors */
+  --color-adia-violet: #423155;
+  --color-adia-violet-dark: #271C34;
+  --color-adia-lilac:  #DCC9DD;
+  --color-adia-rose:   #F0D4D3;
+  --color-adia-gold:   #C9A84C;
+  --color-adia-charcoal: #2D2D2D;
+  --color-adia-cream:  #FCFAFB;
+
+  /* Semantic aliases */
+  --color-background: var(--color-adia-cream);
+  --color-foreground: var(--color-adia-charcoal);
+
+  /* Font family — swappable once Moara files are added */
+  --font-display: var(--font-cormorant);
+  --font-sans: var(--font-cormorant);
+  --font-script: var(--font-dancing-script);
+  /* Animations */
+  --animate-slide-up-bottom: slide-up-from-bottom 2.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Base resets */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-adia-cream);
+  color: var(--color-adia-charcoal);
+  font-family: var(--font-display), "Cormorant Garamond", Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes slide-up-from-bottom {
+  0% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
