@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
@@ -12,6 +13,7 @@ const NAV_LINKS = [
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,13 +27,15 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const isSolid = scrolled || pathname === "/about" || pathname === "/contact";
+
   return (
     <header
       id="navbar"
       className={[
         "fixed top-0 left-0 right-0 z-50 w-full",
         "transition-all duration-500 ease-in-out",
-        scrolled
+        isSolid
           ? "bg-adia-violet shadow-lg shadow-black/20 py-3"
           : "bg-transparent py-6",
       ].join(" ")}
@@ -56,7 +60,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="font-[family-name:var(--font-cormorant)] text-base font-light tracking-widest text-adia-gold hover:text-adia-cream transition-colors duration-300 uppercase"
+              className="font-[family-name:var(--font-cormorant)] text-base font-light tracking-widest uppercase transition-colors duration-300 text-adia-gold hover:text-adia-cream"
             >
               {link.label}
             </Link>
@@ -67,7 +71,7 @@ export default function Navbar() {
         <Link
           href="/collections"
           id="navbar-cta"
-          className="hidden md:inline-flex items-center gap-2 rounded-full border border-adia-gold px-5 py-2 font-[family-name:var(--font-cormorant)] text-sm font-light tracking-widest text-adia-gold uppercase transition-all duration-300 hover:bg-adia-gold hover:text-adia-violet"
+          className="hidden md:inline-flex items-center gap-2 rounded-full border px-5 py-2 font-[family-name:var(--font-cormorant)] text-sm font-light tracking-widest uppercase transition-all duration-300 border-adia-gold text-adia-gold hover:bg-adia-gold hover:text-adia-violet"
         >
           Reserve a Viewing
         </Link>

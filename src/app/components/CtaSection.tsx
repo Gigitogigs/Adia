@@ -1,7 +1,17 @@
 import Link from "next/link";
 import Image from "next/image";
 
-export default function CtaSection() {
+interface CtaSectionProps {
+  headline?: React.ReactNode;
+  subtext?: string;
+}
+
+export default function CtaSection({
+  headline = (
+    <>Begin Your <span className="text-adia-gold italic">Bespoke</span> Journey</>
+  ),
+  subtext = "Discover the profound beauty of our exclusive collections, or work with our master artisans to create a legacy piece uniquely yours.",
+}: CtaSectionProps) {
   return (
     <section 
       className="w-full relative py-32 md:py-48 flex flex-col items-center justify-center text-center overflow-hidden"
@@ -23,11 +33,11 @@ export default function CtaSection() {
       
       <div className="relative z-10 max-w-4xl px-6">
         <h2 className="font-[family-name:var(--font-cormorant)] text-5xl md:text-7xl font-light text-adia-cream mb-8 leading-tight">
-          Begin Your <span className="text-adia-gold italic">Bespoke</span> Journey
+          {headline}
         </h2>
         
         <p className="font-[family-name:var(--font-cormorant)] text-xl md:text-2xl text-adia-cream/80 max-w-2xl mx-auto mb-16 leading-relaxed">
-          Discover the profound beauty of our exclusive collections, or work with our master artisans to create a legacy piece uniquely yours.
+          {subtext}
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
