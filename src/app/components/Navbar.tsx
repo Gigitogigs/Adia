@@ -111,9 +111,9 @@ export default function Navbar() {
 
           {/* CTA */}
           <Link
-            href="/collections"
+            href="/contact"
             id="navbar-cta"
-            className={`hidden md:inline-flex items-center gap-2 rounded-full border px-5 py-2 font-[family-name:var(--font-cormorant)] text-sm font-light tracking-widest uppercase transition-all duration-300 border-adia-gold text-adia-gold hover:bg-adia-gold hover:text-adia-violet whitespace-nowrap ${isSearchExpanded ? "opacity-0 w-0 overflow-hidden pointer-events-none" : "opacity-100"
+            className={`hidden md:inline-flex items-center gap-2 border px-5 py-2 font-[family-name:var(--font-cormorant)] text-sm font-light tracking-widest uppercase transition-all duration-300 border-adia-gold text-adia-gold hover:bg-adia-gold hover:text-adia-violet whitespace-nowrap ${isSearchExpanded ? "opacity-0 w-0 overflow-hidden pointer-events-none" : "opacity-100"
               }`}
           >
             Reserve a Viewing
