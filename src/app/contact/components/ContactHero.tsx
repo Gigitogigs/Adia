@@ -8,7 +8,6 @@ export default function ContactHero() {
         <h1 className="font-[family-name:var(--font-cormorant)] text-[clamp(3.5rem,6vw,6rem)] leading-none text-adia-charcoal font-light mb-8">
           Private <span className="font-[family-name:var(--font-script)] text-adia-violet italic">Inquiries</span>
         </h1>
-        <div className="h-16 w-px bg-adia-gold" />
       </div>
     </section>
   );

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Dancing_Script } from "next/font/google";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
+import { SearchVisibilityProvider } from "@/app/context/SearchVisibilityContext";
 import "./globals.css";
 
 /*
@@ -41,11 +42,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${cormorant.variable} ${dancingScript.variable} h-full`}>
       <body className="min-h-full flex flex-col antialiased" suppressHydrationWarning>
-        <Navbar />
-        <div className="flex-1 w-full flex flex-col">
-          {children}
-        </div>
-        <Footer />
+        <SearchVisibilityProvider>
+          <Navbar />
+          <div className="flex-1 w-full flex flex-col">
+            {children}
+          </div>
+          <Footer />
+        </SearchVisibilityProvider>
       </body>
     </html>
   );

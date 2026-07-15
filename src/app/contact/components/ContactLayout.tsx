@@ -3,10 +3,10 @@
 export default function ContactLayout() {
   return (
     <section className="w-full bg-adia-cream pb-32 px-6 lg:px-12">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24 -mt-16 relative z-10">
         
         {/* Left Side: The Atelier Info */}
-        <div className="w-full lg:w-5/12 flex flex-col justify-center">
+        <div className="w-full lg:w-5/12 flex flex-col justify-start pt-8 md:pt-12">
           <h2 className="font-[family-name:var(--font-cormorant)] text-4xl text-adia-charcoal mb-8 tracking-wide">
             The Atelier
           </h2>
@@ -81,17 +81,23 @@ export default function ContactLayout() {
               </div>
             </div>
 
-            <div className="w-full flex flex-col">
+            <div className="w-full relative flex flex-col">
               <select 
-                id="inquiryType" 
-                className="w-full bg-transparent border-b border-adia-charcoal/20 py-3 text-adia-charcoal focus:outline-none focus:border-adia-gold transition-colors font-[family-name:var(--font-cormorant)] text-lg appearance-none cursor-pointer"
+                id="inquiryType"
+                defaultValue=""
+                className="w-full bg-transparent border-b border-adia-charcoal/20 py-3 pr-8 text-adia-charcoal focus:outline-none focus:border-adia-gold transition-colors font-[family-name:var(--font-cormorant)] text-lg appearance-none cursor-pointer"
               >
-                <option value="" disabled selected>Nature of Inquiry</option>
-                <option value="bespoke">Bespoke Commission</option>
+                <option value="" disabled>Nature of Inquiry</option>
+                <option value="bespoke">Custom Creation</option>
                 <option value="collection">Collection Viewing</option>
                 <option value="press">Press & Media</option>
                 <option value="other">Other</option>
               </select>
+              <div className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none text-adia-charcoal/50">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                </svg>
+              </div>
             </div>
 
             <div className="w-full flex flex-col">
