@@ -21,7 +21,7 @@ export default function CtaSection({
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/hans-bracelet-671789_1920.jpg"
-          alt="Adia bespoke jewelry"
+          alt="Adia custom jewelry"
           fill
           className="object-cover object-center"
           sizes="100vw"

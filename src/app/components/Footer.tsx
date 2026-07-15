@@ -12,7 +12,7 @@ export default function Footer() {
               Adia
             </h2>
             <p className="font-[family-name:var(--font-cormorant)] text-lg text-adia-cream/70 max-w-sm leading-relaxed mb-8">
-              A legacy of elegance and profound beauty. We create bespoke jewels designed to capture life&apos;s most luminous moments.
+              A legacy of elegance and profound beauty. We create custom jewels designed to capture life&apos;s most luminous moments.
             </p>
           </div>
 
@@ -36,7 +36,7 @@ export default function Footer() {
               Assistance
             </h3>
             <ul className="flex flex-col gap-4 font-[family-name:var(--font-cormorant)] text-base text-adia-cream/70">
-              <li><Link href="/bespoke" className="hover:text-adia-gold transition-colors">Bespoke Services</Link></li>
+              <li><Link href="/custom" className="hover:text-adia-gold transition-colors">Custom Creations</Link></li>
               <li><Link href="/care" className="hover:text-adia-gold transition-colors">Jewelry Care</Link></li>
               <li><Link href="/shipping" className="hover:text-adia-gold transition-colors">Shipping & Returns</Link></li>
               <li><Link href="/contact" className="hover:text-adia-gold transition-colors">Contact Us</Link></li>
@@ -50,7 +50,7 @@ export default function Footer() {
               Join the Inner Circle
             </h3>
             <p className="font-[family-name:var(--font-cormorant)] text-base text-adia-cream/70 mb-6">
-              Subscribe to receive private invitations to our exclusive collections and bespoke events.
+              Subscribe to receive private invitations to our exclusive collections and private events.
             </p>
             <form className="flex w-full mt-2">
               <input 

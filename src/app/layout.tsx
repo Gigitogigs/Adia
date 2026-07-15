@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Dancing_Script } from "next/font/google";
+import { Cormorant_Garamond, Dancing_Script, Inter } from "next/font/google";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import { SearchVisibilityProvider } from "@/app/context/SearchVisibilityContext";
@@ -28,6 +28,12 @@ const dancingScript = Dancing_Script({
   display: "swap",
 });
 
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Adia — Premium Jewellery for Women",
   description:
@@ -40,7 +46,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${dancingScript.variable} h-full`}>
+    <html lang="en" className={`${cormorant.variable} ${dancingScript.variable} ${inter.variable} h-full`}>
       <body className="min-h-full flex flex-col antialiased" suppressHydrationWarning>
         <SearchVisibilityProvider>
           <Navbar />
