@@ -12,7 +12,7 @@ export default function ProductGallery({ images, productName }: ProductGalleryPr
   const [activeIndex, setActiveIndex] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  const handleScroll = (e: UIEvent<HTMLDivElement>) => {
+  const handleScroll = () => {
     if (!scrollRef.current) return;
     const scrollLeft = scrollRef.current.scrollLeft;
     // Calculate the width of one snap item (including gap if possible, but clientWidth is just the container)
@@ -28,7 +28,7 @@ export default function ProductGallery({ images, productName }: ProductGalleryPr
     if (!scrollRef.current) return;
     const firstChild = scrollRef.current.children[0] as HTMLElement;
     if (!firstChild) return;
-    const width = firstChild.offsetWidth;
+    // We don't strictly need the width as we can scroll directly via clientWidth * index
     // The gap is 16px (gap-4). So the scroll distance is width + gap if it wasn't snap.
     // Snap scroll to will handle it if we just scroll by index * container width roughly.
     scrollRef.current.scrollTo({

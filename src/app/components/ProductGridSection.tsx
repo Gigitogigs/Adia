@@ -1,5 +1,3 @@
-import Image from "next/image";
-import Link from "next/link";
 import { mockProducts } from "@/app/collections/data/productData";
 import ProductCard from "@/app/collections/components/ProductCard";
 

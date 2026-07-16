@@ -42,6 +42,7 @@ export default function ContactLayout() {
           <form className="flex flex-col gap-8" onSubmit={(e) => e.preventDefault()}>
             <div className="flex flex-col md:flex-row gap-8">
               <div className="w-full flex flex-col">
+                <label htmlFor="firstName" className="sr-only">First Name</label>
                 <input 
                   type="text" 
                   id="firstName" 
@@ -51,6 +52,7 @@ export default function ContactLayout() {
                 />
               </div>
               <div className="w-full flex flex-col">
+                <label htmlFor="lastName" className="sr-only">Last Name</label>
                 <input 
                   type="text" 
                   id="lastName" 
@@ -63,6 +65,7 @@ export default function ContactLayout() {
 
             <div className="flex flex-col md:flex-row gap-8">
               <div className="w-full flex flex-col">
+                <label htmlFor="email" className="sr-only">Email Address</label>
                 <input 
                   type="email" 
                   id="email" 
@@ -72,6 +75,7 @@ export default function ContactLayout() {
                 />
               </div>
               <div className="w-full flex flex-col">
+                <label htmlFor="phone" className="sr-only">Phone Number (Optional)</label>
                 <input 
                   type="tel" 
                   id="phone" 
@@ -82,6 +86,7 @@ export default function ContactLayout() {
             </div>
 
             <div className="w-full relative flex flex-col">
+              <label htmlFor="inquiryType" className="sr-only">Nature of Inquiry</label>
               <select 
                 id="inquiryType"
                 defaultValue=""
@@ -101,6 +106,7 @@ export default function ContactLayout() {
             </div>
 
             <div className="w-full flex flex-col">
+              <label htmlFor="message" className="sr-only">How may we assist you?</label>
               <textarea 
                 id="message" 
                 placeholder="How may we assist you?" 

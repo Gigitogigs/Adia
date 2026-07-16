@@ -45,7 +45,7 @@ To run this project locally, ensure you have Node.js installed, then clone the r
 git clone https://github.com/Gigitogigs/Adia.git
 
 # Navigate into the project directory
-cd adia
+cd Adia
 
 # Install dependencies
 npm install
@@ -71,3 +71,8 @@ Contributions are what make the open source community such an amazing place to l
 
 ## License
 Distributed under the MIT License. See `LICENSE` for more information.
+
+## Contact
+**Gigitogigs** - [ngigemwaniki2004@gmail.com](mailto:ngigemwaniki2004@gmail.com)
+
+Project Link: [https://github.com/Gigitogigs/Adia](https://github.com/Gigitogigs/Adia)

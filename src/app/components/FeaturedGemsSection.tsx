@@ -62,7 +62,7 @@ export default function FeaturedGemsSection() {
   return (
     <section className="w-full bg-adia-cream pt-8 md:pt-16 pb-12 md:pb-32 relative overflow-hidden" id="featured-gems">
       {/* Decorative texture overlay to mimic old paper/canvas */}
-      <div className="absolute inset-0 opacity-5 pointer-events-none" style={{ backgroundImage: "radial-gradient(#423155 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
+      <div className="absolute inset-0 opacity-5 bg-ledger-dots pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-5 md:px-6 lg:px-12 flex flex-col md:flex-row gap-16 md:gap-8 relative z-10">
         

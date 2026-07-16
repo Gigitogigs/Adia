@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useState, useMemo, useEffect } from "react";
 import StoneCarousel from "./components/StoneCarousel";
 import CollectionsSearch from "./components/CollectionsSearch";

@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
 import { mockProducts, Product } from "@/app/collections/data/productData";
 import ProductCard from "@/app/collections/components/ProductCard";
@@ -15,7 +14,7 @@ const getGalleryImages = (product: Product): string[] => {
     Emerald: ["/images/Emerald/emerald-1.jpg", "/images/Emerald/emerald-2.jpg", "/images/Emerald/heeee.jpg"],
     Ruby: ["/images/Ruby/ruby-1.jpg", "/images/Ruby/ruby-2.jpg", "/images/Ruby/ruby-3.jpg"],
     Sapphire: ["/images/Sapphire/sapphire-1.jpg", "/images/Sapphire/sapphire-2.jpg", "/images/Sapphire/sapphire-3.jpg"],
-    Amethyst: ["/images/Amethyst/amethyst-1.jpg", "/images/Amethyst/amethyst-3.jpg", "/images/Amethyst/download-(2).jpg"],
+    Amethyst: ["/images/Amethyst/amethyst-1.jpg", "/images/Amethyst/amethyst-3.jpg", "/images/Amethyst/amethyst-accent.jpg"],
     Gold: ["/images/Gold-Bracelet-Stack-Inspiration.jpg", "/images/Gold/70437491205309.jpg", "/images/story-lifestyle.jpg"]
   };
 

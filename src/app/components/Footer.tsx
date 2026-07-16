@@ -75,8 +75,10 @@ export default function Footer() {
                 Subscribe to receive private invitations to our exclusive collections and private events.
               </p>
               <form className="flex w-full mt-2">
+                <label htmlFor="newsletter-email" className="sr-only">Your Email Address</label>
                 <input 
                   type="email" 
+                  id="newsletter-email" 
                   placeholder="Your Email Address" 
                   className="w-full bg-transparent border-b border-adia-cream/30 text-adia-cream font-[family-name:var(--font-cormorant)] text-lg py-3 focus:outline-none focus:border-adia-gold transition-colors placeholder:text-adia-cream/30"
                   required
