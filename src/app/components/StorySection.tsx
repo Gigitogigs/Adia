@@ -21,6 +21,7 @@ export default function StorySection() {
               src="/images/life in black.jpg"
               alt="Adia elegant lifestyle"
               fill
+              quality={60}
               className="object-cover object-center shadow-lg"
               sizes="(max-width: 1024px) 75vw, 40vw"
             />
@@ -32,6 +33,7 @@ export default function StorySection() {
               src="/images/hans-bracelet-671789_1920.jpg"
               alt="L'Éclat Éternel rings"
               fill
+              quality={60}
               className="object-cover object-center"
               sizes="(max-width: 1024px) 66vw, 35vw"
             />
@@ -84,8 +86,9 @@ export default function StorySection() {
               src="/images/hans-bracelet-671789_1920.jpg"
               alt="L'Éclat Éternel rings"
               fill
-              className="object-cover object-center"
-              sizes="(max-width: 768px) 50vw"
+              quality={60}
+              className="object-cover object-center shadow-2xl"
+              sizes="(max-width: 1024px) 100vw, 45vw"
             />
           </div>
         </div>

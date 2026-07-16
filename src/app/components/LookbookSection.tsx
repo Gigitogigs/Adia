@@ -132,6 +132,7 @@ export default function LookbookSection() {
                     src={item.image}
                     alt={item.title}
                     fill
+                    quality={60}
                     className="object-cover shadow-2xl"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
@@ -208,8 +209,9 @@ export default function LookbookSection() {
                     src={item.image}
                     alt={item.title}
                     fill
+                    quality={60}
                     className="object-cover shadow-2xl"
-                    sizes="100vw"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                   {/* Subtle elegant frame */}
                   <div className="absolute inset-0 border border-adia-gold/30 transform translate-x-4 translate-y-4 -z-10" />

@@ -82,7 +82,7 @@ export default function CollectionsPage() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="/videos/hero-jewels-2.mp4" type="video/mp4" />
+          <source src="/videos/hero-jewels-3-opt.mp4" type="video/mp4" />
         </video>
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/30" />

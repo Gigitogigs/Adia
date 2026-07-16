@@ -39,7 +39,7 @@ export default function AboutPage() {
           <>Let&apos;s Create <span className="text-adia-gold italic">Something</span> Together</>
         }
         subtext="Every masterpiece begins with a single conversation. Share your vision with our artisans and watch it take shape in gold and gemstone."
-        videoSrc="/videos/hero-jewels.mp4"
+        videoSrc="/videos/hero-jewels-opt.mp4"
       />
 
     </main>

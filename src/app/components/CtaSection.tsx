@@ -1,3 +1,6 @@
+"use client";
+
+import { useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -14,8 +17,37 @@ export default function CtaSection({
   subtext = "Discover the profound beauty of our exclusive collections, or work with our master artisans to create a legacy piece uniquely yours.",
   videoSrc,
 }: CtaSectionProps) {
+  const sectionRef = useRef<HTMLElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    const video = videoRef.current;
+    if (!section || !video) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          // Only set the src when the section becomes visible
+          const source = video.querySelector("source") as HTMLSourceElement | null;
+          if (source && !source.src) {
+            source.src = source.dataset.src || "";
+            video.load();
+            video.play().catch(() => {}); // Autoplay may be blocked, ignore error
+          }
+          observer.disconnect(); // Only need to trigger once
+        }
+      },
+      { rootMargin: "200px" } // Start loading 200px before it enters the viewport
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section 
+      ref={sectionRef}
       className="w-full relative py-16 md:py-24 lg:py-48 flex flex-col items-center justify-center text-center overflow-hidden"
       aria-label="Call to Action"
     >
@@ -23,19 +55,22 @@ export default function CtaSection({
       <div className="absolute inset-0 z-0">
         {videoSrc ? (
           <video
+            ref={videoRef}
             autoPlay
             muted
             loop
             playsInline
             className="absolute inset-0 w-full h-full object-cover"
           >
-            <source src={videoSrc} type="video/mp4" />
+            {/* data-src used by IntersectionObserver to lazy-load the video */}
+            <source data-src={videoSrc} type="video/mp4" />
           </video>
         ) : (
           <Image
             src="/images/hans-bracelet-671789_1920.jpg"
             alt="Adia custom jewelry"
             fill
+            quality={60}
             className="object-cover object-center"
             sizes="100vw"
           />

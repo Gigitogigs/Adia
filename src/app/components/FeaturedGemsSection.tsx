@@ -99,6 +99,7 @@ export default function FeaturedGemsSection() {
                         src={gem.images[0]}
                         alt={`${gem.name} featured`}
                         fill
+                        quality={60}
                         className="object-cover object-center"
                         sizes="(max-width: 768px) 85vw, 0vw"
                       />
@@ -130,6 +131,7 @@ export default function FeaturedGemsSection() {
                     src={gem.images[0]}
                     alt={`${gem.name} feature 1`}
                     fill
+                    quality={60}
                     className="object-cover object-center"
                     sizes="(max-width: 768px) 80vw, 40vw"
                   />
@@ -142,6 +144,7 @@ export default function FeaturedGemsSection() {
                     src={gem.images[1]}
                     alt={`${gem.name} feature 2`}
                     fill
+                    quality={60}
                     className="object-cover object-center"
                     sizes="(max-width: 768px) 55vw, 25vw"
                   />
@@ -153,6 +156,7 @@ export default function FeaturedGemsSection() {
                     src={gem.images[2]}
                     alt={`${gem.name} feature 3`}
                     fill
+                    quality={60}
                     className="object-cover object-center"
                     sizes="(max-width: 768px) 50vw, 20vw"
                   />
