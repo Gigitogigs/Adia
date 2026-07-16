@@ -6,7 +6,7 @@ export default function BrandStory() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row gap-16 md:gap-24 items-center">
         
         {/* Left Side: Editorial Image */}
-        <div className="w-full md:w-1/2 relative h-[70vh] md:h-[80vh] overflow-hidden">
+        <div className="w-full md:w-1/2 relative h-[50vh] md:h-[60vh] overflow-hidden">
           <Image 
             src="/images/Diamond/351912467107900.jpg" 
             alt="Adia elegance and beauty"

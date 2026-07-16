@@ -2,9 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { mockProducts } from "@/app/collections/data/productData";
 
-// Select 6 featured products from our mock data
-const FEATURED_IDS = ["em-01", "di-02", "am-01", "sa-02", "go-01", "ru-02"];
-const PRODUCTS = mockProducts.filter((p) => FEATURED_IDS.includes(p.id));
+// Select 8 featured products from our mock data (fills 2 rows of 4)
+const FEATURED_IDS = ["em-01", "di-02", "am-01", "sa-02", "go-01", "ru-02", "ru-01", "di-01"];
+const PRODUCTS = mockProducts.filter((p) => FEATURED_IDS.includes(p.id))
+  .sort((a, b) => FEATURED_IDS.indexOf(a.id) - FEATURED_IDS.indexOf(b.id));
 
 export default function ProductGridSection() {
   return (
