@@ -34,7 +34,7 @@ export default function FAQPage() {
 
   return (
     <div className="flex flex-col w-full">
-      <h2 className="font-[family-name:var(--font-cormorant)] text-4xl lg:text-5xl text-adia-charcoal mb-12 font-medium md:font-light">
+      <h2 className="font-[family-name:var(--font-cormorant)] text-4xl lg:text-5xl text-black mb-4 md:mb-8 font-medium md:font-light">
         Frequently Asked Questions
       </h2>
       
@@ -42,16 +42,16 @@ export default function FAQPage() {
         {faqs.map((faq, index) => {
           const isOpen = openIndex === index;
           return (
-            <div key={index} className="flex flex-col border-b border-adia-charcoal/10">
+            <div key={index} className="flex flex-col border-b border-black/10">
               <button
                 onClick={() => toggleFaq(index)}
                 className="flex items-center justify-between w-full py-8 text-left focus:outline-none group"
                 aria-expanded={isOpen}
               >
-                <h3 className={`font-[family-name:var(--font-cormorant)] text-2xl transition-colors duration-300 ${isOpen ? "text-adia-gold" : "text-adia-charcoal group-hover:text-adia-gold"}`}>
+                <h3 className="font-[family-name:var(--font-cormorant)] text-2xl text-black">
                   {faq.question}
                 </h3>
-                <span className={`text-adia-charcoal transition-transform duration-500 ease-in-out ${isOpen ? "rotate-180" : "rotate-0"}`}>
+                <span className={`text-black transition-transform duration-500 ease-in-out ${isOpen ? "rotate-180" : "rotate-0"}`}>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                   </svg>
@@ -61,7 +61,7 @@ export default function FAQPage() {
               <div 
                 className={`grid transition-all duration-500 ease-in-out overflow-hidden ${isOpen ? "grid-rows-[1fr] opacity-100 pb-8" : "grid-rows-[0fr] opacity-0 pb-0"}`}
               >
-                <p className="min-h-0 font-[family-name:var(--font-inter)] text-base font-light text-adia-charcoal/70 leading-relaxed">
+                <p className="min-h-0 font-[family-name:var(--font-inter)] text-base font-light text-black/70 leading-relaxed">
                   {faq.answer}
                 </p>
               </div>

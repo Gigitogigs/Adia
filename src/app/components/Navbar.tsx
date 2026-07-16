@@ -77,7 +77,7 @@ export default function Navbar() {
           ADIA
         </Link>
 
-        <div className="flex items-center gap-8">
+        <div className="flex items-center gap-2 md:gap-8">
           {/* Nav Links */}
           <nav
             id="navbar-links"
@@ -132,34 +132,33 @@ export default function Navbar() {
           >
             Reserve a Viewing
           </Link>
+          {/* Mobile menu icon */}
+          <button
+            id="navbar-mobile-toggle"
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+            className="md:hidden flex flex-col gap-1.5 p-2 relative z-50 ml-2"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            <span className={`block h-px bg-adia-gold transition-all duration-300 ${isMobileMenuOpen ? "w-6 rotate-45 translate-y-[7px]" : "w-6"}`} />
+            <span className={`block h-px bg-adia-gold transition-all duration-300 ${isMobileMenuOpen ? "w-6 opacity-0" : "w-6 opacity-100"}`} />
+            <span className={`block h-px bg-adia-gold transition-all duration-300 ${isMobileMenuOpen ? "w-6 -rotate-45 -translate-y-[7px]" : "w-4 self-end"}`} />
+          </button>
         </div>
-
-        {/* Mobile menu icon */}
-        <button
-          id="navbar-mobile-toggle"
-          aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-          className="md:hidden flex flex-col gap-1.5 p-2 relative z-50"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          <span className={`block h-px bg-adia-gold transition-all duration-300 ${isMobileMenuOpen ? "w-6 rotate-45 translate-y-[7px]" : "w-6"}`} />
-          <span className={`block h-px bg-adia-gold transition-all duration-300 ${isMobileMenuOpen ? "w-6 opacity-0" : "w-6 opacity-100"}`} />
-          <span className={`block h-px bg-adia-gold transition-all duration-300 ${isMobileMenuOpen ? "w-6 -rotate-45 -translate-y-[7px]" : "w-4 self-end"}`} />
-        </button>
       </div>
 
       {/* Mobile Menu Overlay */}
       <div 
-        className={`fixed inset-0 bg-adia-violet-dark z-40 flex flex-col items-center justify-center transition-all duration-500 ease-in-out md:hidden ${
+        className={`fixed inset-0 bg-adia-violet-dark z-40 flex flex-col justify-start pt-32 transition-all duration-500 ease-in-out md:hidden ${
           isMobileMenuOpen ? "opacity-100 visible pointer-events-auto" : "opacity-0 invisible pointer-events-none"
         }`}
       >
-        <nav className="flex flex-col items-center gap-12 text-center w-full px-6">
+        <nav className="flex flex-col items-start gap-6 w-full px-2">
           {NAV_LINKS.map((link, index) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="font-[family-name:var(--font-cormorant)] text-4xl text-adia-gold uppercase tracking-widest hover:text-adia-cream transition-colors duration-300"
+              className="font-[family-name:var(--font-cormorant)] text-2xl text-adia-gold uppercase tracking-widest hover:text-adia-cream transition-colors duration-300"
               style={{
                 transitionDelay: `${isMobileMenuOpen ? index * 75 + 150 : 0}ms`,
                 transform: isMobileMenuOpen ? "translateY(0)" : "translateY(20px)",
@@ -174,7 +173,7 @@ export default function Navbar() {
           <Link
             href="/contact"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="mt-8 px-10 py-4 border border-adia-gold text-adia-gold font-[family-name:var(--font-cormorant)] text-xl tracking-widest uppercase hover:bg-adia-gold hover:text-adia-violet-dark transition-all duration-300"
+            className="mt-4 px-6 py-2 border border-adia-gold text-adia-gold font-[family-name:var(--font-cormorant)] text-sm tracking-widest uppercase hover:bg-adia-gold hover:text-adia-violet-dark transition-all duration-300"
             style={{
               transitionDelay: `${isMobileMenuOpen ? NAV_LINKS.length * 75 + 150 : 0}ms`,
               transform: isMobileMenuOpen ? "translateY(0)" : "translateY(20px)",

@@ -1,7 +1,7 @@
 export default function TermsPage() {
   return (
     <div className="flex flex-col w-full">
-      <h2 className="font-[family-name:var(--font-cormorant)] text-4xl lg:text-5xl text-adia-charcoal mb-8 font-medium md:font-light">
+      <h2 className="font-[family-name:var(--font-cormorant)] text-4xl lg:text-5xl text-black mb-4 md:mb-8 font-medium md:font-light">
         Terms of Service
       </h2>
       

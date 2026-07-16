@@ -7,26 +7,26 @@ export default function ContactLayout() {
         
         {/* Left Side: The Atelier Info */}
         <div className="w-full lg:w-5/12 flex flex-col justify-start pt-8 md:pt-12">
-          <h2 className="font-[family-name:var(--font-cormorant)] text-4xl text-adia-charcoal mb-8 tracking-wide">
+          <h2 className="font-[family-name:var(--font-cormorant)] text-2xl md:text-4xl text-black mb-8 tracking-wide">
             The Atelier
           </h2>
           
-          <div className="flex flex-col gap-8 text-adia-charcoal/80 font-[family-name:var(--font-cormorant)] text-lg">
+          <div className="flex flex-col gap-8 text-black font-[family-name:var(--font-cormorant)] text-lg">
             <div>
-              <p className="uppercase tracking-[0.2em] text-xs font-semibold text-adia-gold mb-2">Location</p>
+              <p className="uppercase tracking-[0.2em] text-xs font-semibold text-black mb-2">Location</p>
               <p>15 Place Vendôme</p>
               <p>75001 Paris, France</p>
             </div>
             
             <div>
-              <p className="uppercase tracking-[0.2em] text-xs font-semibold text-adia-gold mb-2">Hours</p>
+              <p className="uppercase tracking-[0.2em] text-xs font-semibold text-black mb-2">Hours</p>
               <p>Monday — Saturday</p>
               <p>10:00 AM — 6:00 PM</p>
-              <p className="italic mt-1 text-adia-violet">By private appointment only.</p>
+              <p className="italic mt-1 text-black">By private appointment only.</p>
             </div>
             
             <div>
-              <p className="uppercase tracking-[0.2em] text-xs font-semibold text-adia-gold mb-2">Direct Contact</p>
+              <p className="uppercase tracking-[0.2em] text-xs font-semibold text-black mb-2">Direct Contact</p>
               <p>+33 1 42 60 00 00</p>
               <p>inquiries@adia.com</p>
             </div>
@@ -34,8 +34,8 @@ export default function ContactLayout() {
         </div>
 
         {/* Right Side: The Inquiry Form */}
-        <div className="w-full lg:w-7/12 bg-white p-8 md:p-12 shadow-2xl shadow-black/5">
-          <h3 className="font-[family-name:var(--font-cormorant)] text-2xl text-adia-charcoal mb-8">
+        <div className="w-full lg:w-7/12 bg-white p-8 md:p-12 shadow-2xl shadow-black/5 border border-black lg:border-transparent">
+          <h3 className="font-[family-name:var(--font-cormorant)] text-2xl text-black mb-8">
             Send an Inquiry
           </h3>
           
@@ -46,7 +46,7 @@ export default function ContactLayout() {
                   type="text" 
                   id="firstName" 
                   placeholder="First Name" 
-                  className="w-full bg-transparent border-b border-adia-charcoal/50 py-3 text-adia-charcoal focus:outline-none focus:border-adia-gold transition-colors font-[family-name:var(--font-cormorant)] text-lg placeholder:text-adia-charcoal/40"
+                  className="w-full bg-transparent border-b border-black py-3 text-black focus:outline-none focus:border-black transition-colors font-[family-name:var(--font-cormorant)] text-lg placeholder:text-black/60"
                   required
                 />
               </div>
@@ -55,7 +55,7 @@ export default function ContactLayout() {
                   type="text" 
                   id="lastName" 
                   placeholder="Last Name" 
-                  className="w-full bg-transparent border-b border-adia-charcoal/50 py-3 text-adia-charcoal focus:outline-none focus:border-adia-gold transition-colors font-[family-name:var(--font-cormorant)] text-lg placeholder:text-adia-charcoal/40"
+                  className="w-full bg-transparent border-b border-black py-3 text-black focus:outline-none focus:border-black transition-colors font-[family-name:var(--font-cormorant)] text-lg placeholder:text-black/60"
                   required
                 />
               </div>
@@ -67,7 +67,7 @@ export default function ContactLayout() {
                   type="email" 
                   id="email" 
                   placeholder="Email Address" 
-                  className="w-full bg-transparent border-b border-adia-charcoal/50 py-3 text-adia-charcoal focus:outline-none focus:border-adia-gold transition-colors font-[family-name:var(--font-cormorant)] text-lg placeholder:text-adia-charcoal/40"
+                  className="w-full bg-transparent border-b border-black py-3 text-black focus:outline-none focus:border-black transition-colors font-[family-name:var(--font-cormorant)] text-lg placeholder:text-black/60"
                   required
                 />
               </div>
@@ -76,7 +76,7 @@ export default function ContactLayout() {
                   type="tel" 
                   id="phone" 
                   placeholder="Phone Number (Optional)" 
-                  className="w-full bg-transparent border-b border-adia-charcoal/50 py-3 text-adia-charcoal focus:outline-none focus:border-adia-gold transition-colors font-[family-name:var(--font-cormorant)] text-lg placeholder:text-adia-charcoal/40"
+                  className="w-full bg-transparent border-b border-black py-3 text-black focus:outline-none focus:border-black transition-colors font-[family-name:var(--font-cormorant)] text-lg placeholder:text-black/60"
                 />
               </div>
             </div>
@@ -85,7 +85,7 @@ export default function ContactLayout() {
               <select 
                 id="inquiryType"
                 defaultValue=""
-                className="w-full bg-transparent border-b border-adia-charcoal/50 py-3 pr-8 text-adia-charcoal focus:outline-none focus:border-adia-gold transition-colors font-[family-name:var(--font-cormorant)] text-lg appearance-none cursor-pointer"
+                className="w-full bg-transparent border-b border-black py-3 pr-8 text-black focus:outline-none focus:border-black transition-colors font-[family-name:var(--font-cormorant)] text-lg appearance-none cursor-pointer"
               >
                 <option value="" disabled>Nature of Inquiry</option>
                 <option value="bespoke">Custom Creation</option>
@@ -93,7 +93,7 @@ export default function ContactLayout() {
                 <option value="press">Press & Media</option>
                 <option value="other">Other</option>
               </select>
-              <div className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none text-adia-charcoal/50">
+              <div className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none text-black">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                 </svg>
@@ -105,7 +105,7 @@ export default function ContactLayout() {
                 id="message" 
                 placeholder="How may we assist you?" 
                 rows={4}
-                className="w-full bg-transparent border-b border-adia-charcoal/50 py-3 text-adia-charcoal focus:outline-none focus:border-adia-gold transition-colors font-[family-name:var(--font-cormorant)] text-lg placeholder:text-adia-charcoal/40 resize-none"
+                className="w-full bg-transparent border-b border-black py-3 text-black focus:outline-none focus:border-black transition-colors font-[family-name:var(--font-cormorant)] text-lg placeholder:text-black/60 resize-none"
                 required
               />
             </div>
