@@ -42,7 +42,7 @@ To run this project locally, ensure you have Node.js installed, then clone the r
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/adia.git
+git clone https://github.com/Gigitogigs/Adia.git
 
 # Navigate into the project directory
 cd adia
