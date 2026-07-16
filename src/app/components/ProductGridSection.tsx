@@ -1,50 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
+import { mockProducts } from "@/app/collections/data/productData";
 
-const PRODUCTS = [
-  {
-    id: "pearl-set",
-    name: "Luminous Pearl Drop",
-    description: "Lustrous South Sea pearls intertwined with delicate silver.",
-    price: "$1,850",
-    image: "/images/rishika73978-pearl-8012322_1920.jpg",
-  },
-  {
-    id: "amethyst-cascade",
-    name: "Amethyst Cascade",
-    description: "Deep violet amethysts cascading in a brilliant setting.",
-    price: "$2,400",
-    image: "/images/Purple-rhinestone-necklace-set.jpg",
-  },
-  {
-    id: "heritage-stack",
-    name: "Heritage Stack",
-    description: "Solid gold bangles crafted for the modern era.",
-    price: "$850",
-    image: "/images/Gold-Bracelet-Stack-Inspiration.jpg",
-  },
-  {
-    id: "diamond-solitaire",
-    name: "Diamond Solitaire",
-    description: "A flawless, brilliant-cut diamond of exceptional clarity.",
-    price: "$4,200",
-    image: "/images/pexels-accessory-1867039_1920.jpg",
-  },
-  {
-    id: "emerald-cut",
-    name: "Imperial Emerald",
-    description: "A breathtaking vivid green emerald in a classic vintage setting.",
-    price: "$5,800",
-    image: "/images/Emerald/emerald-1.jpg",
-  },
-  {
-    id: "ocean-sapphire",
-    name: "Ocean Sapphire",
-    description: "A mesmerizing deep blue sapphire, reminiscent of the midnight sea.",
-    price: "$3,200",
-    image: "/images/Sapphire/sapphire-2.jpg",
-  }
-];
+// Select 6 featured products from our mock data
+const FEATURED_IDS = ["em-01", "di-02", "am-01", "sa-02", "go-01", "ru-02"];
+const PRODUCTS = mockProducts.filter((p) => FEATURED_IDS.includes(p.id));
 
 export default function ProductGridSection() {
   return (
@@ -59,11 +19,12 @@ export default function ProductGridSection() {
         </div>
 
         {/* The Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full gap-3 p-3">
           {PRODUCTS.map((product) => (
-            <div 
+            <Link 
+              href={`/product/${product.id}`}
               key={product.id} 
-              className="group relative w-full h-[60vh] md:h-[50vh] lg:h-[80vh] overflow-hidden cursor-pointer bg-adia-charcoal/5"
+              className="group relative w-full h-[45vh] md:h-[40vh] lg:h-[60vh] overflow-hidden cursor-pointer bg-adia-charcoal/5 block"
             >
               {/* Product Image */}
               <Image
@@ -87,17 +48,18 @@ export default function ProductGridSection() {
                 </p>
                 <div className="flex flex-col items-center gap-4 w-full">
                   <span className="font-[family-name:var(--font-cormorant)] text-lg text-adia-gold tracking-widest">
-                    {product.price}
+                    {new Intl.NumberFormat("en-US", {
+                      style: "currency",
+                      currency: "USD",
+                      maximumFractionDigits: 0,
+                    }).format(product.price)}
                   </span>
-                  <Link 
-                    href={`/product/${product.id}`}
-                    className="mt-2 text-xs font-semibold tracking-[0.2em] text-adia-cream uppercase border-b border-adia-gold pb-1 hover:text-adia-gold transition-colors"
-                  >
+                  <span className="mt-2 text-xs font-semibold tracking-[0.2em] text-adia-cream uppercase border-b border-adia-gold pb-1 group-hover:text-adia-gold transition-colors">
                     View Details
-                  </Link>
+                  </span>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

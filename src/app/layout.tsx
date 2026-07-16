@@ -46,7 +46,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${dancingScript.variable} ${inter.variable} h-full`}>
+    <html lang="en" className={`${cormorant.variable} ${dancingScript.variable} ${inter.variable} h-full`} data-scroll-behavior="smooth">
       <body className="min-h-full flex flex-col antialiased" suppressHydrationWarning>
         <SearchVisibilityProvider>
           <Navbar />

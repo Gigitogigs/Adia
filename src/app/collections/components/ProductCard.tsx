@@ -4,7 +4,9 @@ import { useState } from "react";
 import Image from "next/image";
 import { Product } from "../data/productData";
 
-export default function ProductCard({ product }: { product: Product }) {
+import Link from "next/link";
+
+export default function ProductCard({ product, size = "normal" }: { product: Product, size?: "normal" | "small" }) {
   const [isBookmarked, setIsBookmarked] = useState(product.isBookmarked);
 
   const toggleBookmark = (e: React.MouseEvent) => {
@@ -19,8 +21,15 @@ export default function ProductCard({ product }: { product: Product }) {
     maximumFractionDigits: 0,
   }).format(product.price);
 
+  const heightClasses = size === "small" 
+    ? "h-[45vh] md:h-[40vh] lg:h-[60vh]" 
+    : "h-[60vh] md:h-[50vh] lg:h-[80vh]";
+
   return (
-    <div className="group relative w-full h-[60vh] md:h-[50vh] lg:h-[80vh] overflow-hidden cursor-pointer bg-adia-charcoal/5">
+    <Link 
+      href={`/product/${product.id}`}
+      className={`group relative w-full ${heightClasses} overflow-hidden cursor-pointer bg-adia-charcoal/5 block`}
+    >
       {/* Product Image */}
       <Image
         src={product.image}
@@ -33,7 +42,7 @@ export default function ProductCard({ product }: { product: Product }) {
       {/* Bookmark Icon */}
       <button 
         onClick={toggleBookmark}
-        className="absolute top-4 right-4 z-20 p-2 text-adia-charcoal hover:text-adia-gold transition-colors"
+        className="absolute top-4 right-4 z-20 p-2 text-adia-cream hover:text-adia-gold transition-colors"
         aria-label="Bookmark"
       >
         {isBookmarked ? (
@@ -74,6 +83,6 @@ export default function ProductCard({ product }: { product: Product }) {
           </span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }

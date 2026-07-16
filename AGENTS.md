@@ -47,6 +47,7 @@ Our build will use modular components for easier debugging and reusability.
 - **Label all nav elements** with `aria-label` (e.g., `aria-label="Primary navigation"`).
 - **Buttons that only contain icons** must have `aria-label` text.
 - **Color contrast.** Ensure text against backgrounds meets WCAG AA (4.5:1 for normal text, 3:1 for large text). The `adia-gold` on `adia-violet` and `adia-cream` on `adia-violet` pairings are pre-approved.
+- **Button & CTA Readability.** Always ensure buttons and critical text avoid excessively light font weights (`font-light`). Use `font-medium` or `font-semibold` with solid colors (like `text-black` or `text-adia-charcoal`) instead of light or transparent styles to ensure maximum contrast and readability.
 
 ## Performance
 - **Lazy-load below-the-fold images** (Next.js `<Image>` does this by default — do not override with `loading="eager"` unless the image is above the fold).

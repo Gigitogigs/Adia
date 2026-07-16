@@ -7,11 +7,11 @@ import { GEMS_LIST } from "../data/productData";
 
 const STONE_DATA: Record<string, { image: string }> = {
   Amethyst: { image: "/images/Amethyst/amethyst-1.jpg" },
-  Diamond: { image: "/images/Diamond/diamond-2.jpg" },
-  Emerald: { image: "/images/Emerald/emerald-1.jpg" },
-  Ruby: { image: "/images/Purple-rhinestone-necklace-set.jpg" },
-  Sapphire: { image: "/images/rishika73978-pearl-8012322_1920.jpg" },
-  Gold: { image: "/images/Gold-Bracelet-Stack-Inspiration.jpg" },
+  Diamond: { image: "/images/Diamond/18225573488365493.jpg" },
+  Emerald: { image: "/images/Emerald/8373949304225451.jpg" },
+  Ruby: { image: "/images/Ruby/Ruby Moissanite Pendant Necklace, Sterling Silver Diamond Halo, July Birthstone.jpg" },
+  Sapphire: { image: "/images/Sapphire/Blueberry Tanzanite Couture Diamond Necklace.jpg" },
+  Gold: { image: "/images/Gold/70437491205309.jpg" },
 };
 
 export default function StoneCarousel() {

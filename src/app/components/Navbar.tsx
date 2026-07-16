@@ -38,7 +38,7 @@ export default function Navbar() {
     }
   }, [isSearchExpanded]);
 
-  const isSolid = scrolled || pathname === "/about" || pathname === "/contact" || pathname === "/collections";
+  const isSolid = scrolled || pathname === "/about" || pathname === "/contact" || pathname === "/collections" || pathname.startsWith("/product");
   const showSearchIcon = pathname === "/collections" && isSearchIconVisible;
 
   return (
