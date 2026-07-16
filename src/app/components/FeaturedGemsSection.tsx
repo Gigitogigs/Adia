@@ -57,10 +57,10 @@ const GEMS = [
 ];
 
 export default function FeaturedGemsSection() {
-  const [activeGem, setActiveGem] = useState(GEMS[0]);
+  const [activeGem, setActiveGem] = useState<typeof GEMS[0] | null>(GEMS[0]);
 
   return (
-    <section className="w-full bg-adia-cream pt-[100px] pb-32 md:pb-32 relative overflow-hidden" id="featured-gems">
+    <section className="w-full bg-adia-cream pt-8 md:pt-16 pb-12 md:pb-32 relative overflow-hidden" id="featured-gems">
       {/* Decorative texture overlay to mimic old paper/canvas */}
       <div className="absolute inset-0 opacity-5 pointer-events-none" style={{ backgroundImage: "radial-gradient(#423155 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
 
@@ -68,32 +68,42 @@ export default function FeaturedGemsSection() {
         
         {/* Left: The Ledger Index */}
         <div className="w-full md:w-5/12 flex flex-col justify-center">
-          <span className="font-[family-name:var(--font-cormorant)] text-sm md:text-base font-semibold tracking-[0.3em] text-adia-charcoal uppercase mb-12 block">
+          <h2 className="font-[family-name:var(--font-cormorant)] text-xl md:text-2xl font-semibold tracking-[0.2em] text-black uppercase mb-12 block">
             The Gemologist&apos;s Ledger
-          </span>
+          </h2>
           
-          <div className="flex flex-col gap-6 md:gap-8">
+          <div className="flex flex-col divide-y divide-black/10 border-y border-black/10">
             {GEMS.map((gem) => {
-              const isActive = activeGem.id === gem.id;
+              const isActive = activeGem?.id === gem.id;
               return (
-                <div key={gem.id} className="flex flex-col">
+                <div key={gem.id} className="flex flex-col py-6 md:py-8">
                   <button
                     onMouseEnter={() => setActiveGem(gem)}
-                    onClick={() => setActiveGem(gem)}
+                    onClick={() => setActiveGem(isActive ? null : gem)}
                     className={`text-left transition-all duration-500 group ${isActive ? 'opacity-100 translate-x-4' : 'opacity-30 hover:opacity-70'}`}
                   >
-                    <h3 className="font-[family-name:var(--font-script)] text-6xl md:text-8xl text-adia-violet-dark lowercase">
+                    <h3 className="font-[family-name:var(--font-script)] text-4xl md:text-5xl text-adia-violet-dark lowercase">
                       {gem.name}
                     </h3>
                     {/* Subtle underline for the active item */}
                     <div className={`h-px bg-adia-gold mt-2 transition-all duration-700 ${isActive ? 'w-full max-w-[150px]' : 'w-0'}`} />
                   </button>
                   
-                  {/* Accordion Description */}
+                  {/* Accordion Description & Mobile Image */}
                   <div 
-                    className={`overflow-hidden transition-all duration-500 ease-in-out ${isActive ? 'max-h-40 opacity-100 mt-4 translate-x-4' : 'max-h-0 opacity-0 mt-0 translate-x-0'}`}
+                    className={`overflow-hidden transition-all duration-500 ease-in-out flex flex-col gap-4 ${isActive ? 'max-h-[500px] opacity-100 mt-4 translate-x-4' : 'max-h-0 opacity-0 mt-0 translate-x-0'}`}
                   >
-                    <p className="font-[family-name:var(--font-cormorant)] text-lg text-adia-charcoal leading-relaxed max-w-sm">
+                    {/* Mobile Image (hidden on desktop) */}
+                    <div className="md:hidden relative w-[85%] aspect-[4/3] border-[4px] border-white shadow-lg">
+                      <Image
+                        src={gem.images[0]}
+                        alt={`${gem.name} featured`}
+                        fill
+                        className="object-cover object-center"
+                        sizes="(max-width: 768px) 85vw, 0vw"
+                      />
+                    </div>
+                    <p className="font-[family-name:var(--font-cormorant)] text-lg text-black leading-relaxed max-w-sm">
                       {gem.description}
                     </p>
                   </div>
@@ -104,10 +114,10 @@ export default function FeaturedGemsSection() {
         </div>
 
         {/* Right: The Collage Page */}
-        <div className="w-full md:w-7/12 relative h-[600px] md:h-[800px] mt-12 md:mt-0">
+        <div className="hidden md:block w-7/12 relative h-[800px]">
           
           {GEMS.map((gem) => {
-            const isActive = activeGem.id === gem.id;
+            const isActive = activeGem?.id === gem.id;
             
             return (
               <div 

@@ -13,14 +13,14 @@ export default function HeroSection() {
 
       {/* Image container covering the screen, rendering the image fully */}
       <div className="absolute inset-0 flex items-center justify-center">
-        <div className="relative w-full h-full max-w-3xl">
+        <div className="relative w-full h-full md:max-w-3xl">
           <Image
             src="/images/beauty-and-elegance.jpg"
             alt="Adia jewellery model portrait"
             fill
             priority
             sizes="(max-width: 768px) 100vw, 48rem"
-            className="object-contain object-center"
+            className="object-cover md:object-contain object-center"
           />
         </div>
         {/* Subtle gradient overlay at bottom for text readability */}
@@ -31,7 +31,7 @@ export default function HeroSection() {
        * Foreground text layer — sits above the image via z-index.
        * Positioned on the LEFT side to overlap the portrait edge.
        */}
-      <div className="relative z-10 flex flex-col md:flex-row h-full w-full max-w-7xl mx-auto px-6 lg:px-12 justify-end md:justify-between items-start md:items-end pb-16 md:pb-20 gap-6 md:gap-0">
+      <div className="relative z-10 flex flex-col md:flex-row h-full w-full max-w-7xl mx-auto px-6 lg:px-12 justify-end md:justify-between items-start md:items-end pb-6 md:pb-20 gap-6 md:gap-0">
         {/* Left Side: Brand Name & Tagline */}
         <div className="flex flex-col max-w-xl">
           {/* Brand name */}

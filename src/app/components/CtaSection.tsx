@@ -16,7 +16,7 @@ export default function CtaSection({
 }: CtaSectionProps) {
   return (
     <section 
-      className="w-full relative py-8 md:py-24 lg:py-48 flex flex-col items-center justify-center text-center overflow-hidden"
+      className="w-full relative py-16 md:py-24 lg:py-48 flex flex-col items-center justify-center text-center overflow-hidden"
       aria-label="Call to Action"
     >
       {/* Background: Video or Image */}
@@ -46,24 +46,24 @@ export default function CtaSection({
       </div>
       
       <div className="relative z-10 max-w-4xl px-5 md:px-6">
-        <h2 className="font-[family-name:var(--font-cormorant)] text-3xl md:text-7xl font-medium md:font-light text-adia-cream mb-8 leading-tight">
+        <h2 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-7xl font-medium md:font-light text-adia-cream mb-8 leading-tight">
           {headline}
         </h2>
         
-        <p className="font-[family-name:var(--font-cormorant)] text-xl md:text-2xl text-adia-cream/80 max-w-2xl mx-auto mb-16 leading-relaxed">
+        <p className="font-[family-name:var(--font-cormorant)] text-lg md:text-2xl text-adia-cream/80 max-w-2xl mx-auto mb-16 leading-relaxed">
           {subtext}
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 w-full">
           <Link 
             href="/contact"
-            className="w-full sm:w-auto px-6 py-3 md:px-10 md:py-5 border border-adia-gold text-adia-gold font-[family-name:var(--font-cormorant)] text-xs md:text-lg tracking-widest uppercase hover:bg-adia-gold hover:text-adia-violet-dark transition-all duration-300"
+            className="w-full sm:w-auto px-6 py-4 md:px-10 md:py-5 border border-adia-gold text-adia-gold font-[family-name:var(--font-cormorant)] text-sm md:text-lg tracking-widest uppercase hover:bg-adia-gold hover:text-adia-violet-dark transition-all duration-300"
           >
             Book a Consultation
           </Link>
           <Link 
             href="/collections"
-            className="w-full sm:w-auto px-6 py-3 md:px-10 md:py-5 border border-adia-gold text-adia-gold font-[family-name:var(--font-cormorant)] text-xs md:text-lg tracking-widest uppercase hover:bg-adia-gold hover:text-adia-violet-dark transition-all duration-300"
+            className="w-full sm:w-auto px-6 py-4 md:px-10 md:py-5 border border-adia-gold text-adia-gold font-[family-name:var(--font-cormorant)] text-sm md:text-lg tracking-widest uppercase hover:bg-adia-gold hover:text-adia-violet-dark transition-all duration-300"
           >
             Explore Collections
           </Link>

@@ -37,7 +37,34 @@ const LOOKBOOK_ITEMS = [
 
 export default function LookbookSection() {
   const targetRef = useRef<HTMLDivElement>(null);
+  const mobileCarouselRef = useRef<HTMLDivElement>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [mobileActiveIndex, setMobileActiveIndex] = useState(0);
+
+  useEffect(() => {
+    // Mobile auto-scroll logic
+    const interval = setInterval(() => {
+      if (mobileCarouselRef.current && window.innerWidth < 768) {
+        const { scrollLeft, scrollWidth, clientWidth } = mobileCarouselRef.current;
+        const maxScroll = scrollWidth - clientWidth;
+        
+        if (scrollLeft >= maxScroll - 10) {
+          mobileCarouselRef.current.scrollTo({ left: 0, behavior: "smooth" });
+        } else {
+          mobileCarouselRef.current.scrollTo({ left: scrollLeft + clientWidth, behavior: "smooth" });
+        }
+      }
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const handleMobileScroll = () => {
+    if (mobileCarouselRef.current) {
+      const el = mobileCarouselRef.current;
+      const index = Math.round(el.scrollLeft / el.clientWidth);
+      setMobileActiveIndex(index);
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -75,14 +102,13 @@ export default function LookbookSection() {
 
   return (
     <section 
-      ref={targetRef} 
-      // The height dictates how long the user must scroll to finish the horizontal animation.
-      // Reducing to 200vh makes it so roughly one normal scroll motion triggers a slide transition.
-      className="relative w-full bg-adia-violet-dark h-[200vh]"
       id="lookbook"
       aria-label="Lookbook Carousel"
+      className="relative w-full bg-adia-violet-dark"
     >
-      <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center bg-adia-violet-dark">
+      {/* === DESKTOP LAYOUT (Scroll Hijacked) === */}
+      <div ref={targetRef} className="hidden md:block relative w-full h-[200vh]">
+        <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center bg-adia-violet-dark">
         
         {/* The horizontal scrolling container */}
         <div 
@@ -154,6 +180,77 @@ export default function LookbookSection() {
            />
         </div>
 
+        </div>
+      </div>
+
+      {/* === MOBILE LAYOUT (Native Carousel) === */}
+      <div className="md:hidden relative w-full pt-16 pb-4 flex flex-col items-center overflow-hidden">
+        
+        {/* Horizontal scroll container */}
+        <div 
+          ref={mobileCarouselRef}
+          onScroll={handleMobileScroll}
+          className="flex flex-row w-full overflow-x-auto snap-x snap-mandatory relative z-10"
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        >
+          {/* Removed visual gradient as auto-scroll handles discoverability */}
+
+          {LOOKBOOK_ITEMS.map((item) => (
+            <div 
+              key={item.id}
+              className="w-screen flex-shrink-0 flex flex-col items-center justify-center px-6 snap-center"
+            >
+              {/* Reduced image size */}
+              <div className="w-full max-w-md flex flex-col gap-8 relative">
+                
+                <div className="w-full relative h-[35vh] min-h-[300px]">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-cover shadow-2xl"
+                    sizes="100vw"
+                  />
+                  {/* Subtle elegant frame */}
+                  <div className="absolute inset-0 border border-adia-gold/30 transform translate-x-4 translate-y-4 -z-10" />
+                </div>
+
+                <div className="w-full flex flex-col text-left mt-4">
+                  <span className="font-[family-name:var(--font-cormorant)] text-xs tracking-[0.3em] text-adia-gold uppercase mb-3">
+                    {item.subtitle}
+                  </span>
+                  <h3 className="font-[family-name:var(--font-cormorant)] text-4xl font-light text-adia-cream mb-4 leading-tight">
+                    {item.title}
+                  </h3>
+                  <p className="font-[family-name:var(--font-cormorant)] text-base leading-relaxed text-adia-lilac/80 mb-8">
+                    {item.description}
+                  </p>
+                  
+                  <Link 
+                    href="/collections"
+                    className="inline-flex w-fit items-center gap-3 font-[family-name:var(--font-cormorant)] text-xs font-light tracking-[0.2em] text-adia-cream uppercase transition-colors duration-300 hover:text-adia-gold group"
+                  >
+                    <span className="border-b border-adia-gold pb-1">Explore</span>
+                    <span className="transition-transform duration-300 group-hover:translate-x-2 text-adia-gold">→</span>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Pagination Dots */}
+        <div className="flex gap-3 mt-12 justify-center items-center z-20">
+          {LOOKBOOK_ITEMS.map((_, i) => (
+            <div 
+              key={i} 
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                mobileActiveIndex === i ? "w-6 bg-adia-gold" : "w-1.5 bg-adia-cream/30"
+              }`}
+            />
+          ))}
+        </div>
+        
       </div>
     </section>
   );
