@@ -26,6 +26,12 @@ const getGalleryImages = (product: Product): string[] => {
   return uniqueImages.length > 1 ? uniqueImages : [product.image, product.image, product.image];
 };
 
+export async function generateStaticParams() {
+  return mockProducts.map((product) => ({
+    id: product.id,
+  }));
+}
+
 export default async function ProductDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = await params;
   const product = mockProducts.find((p) => p.id === resolvedParams.id);

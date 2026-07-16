@@ -3,6 +3,12 @@ import StoneCarousel from "../components/StoneCarousel";
 import ProductGrid from "../components/ProductGrid";
 import { mockProducts, GEMS_LIST } from "../data/productData";
 
+export async function generateStaticParams() {
+  return GEMS_LIST.map((stone) => ({
+    stone: stone.toLowerCase(),
+  }));
+}
+
 export default async function StoneCollectionPage({ params }: { params: Promise<{ stone: string }> }) {
   const resolvedParams = await params;
   const decodedStone = decodeURIComponent(resolvedParams.stone).toLowerCase();
