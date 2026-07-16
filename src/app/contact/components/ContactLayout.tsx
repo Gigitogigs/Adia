@@ -2,7 +2,7 @@
 
 export default function ContactLayout() {
   return (
-    <section className="w-full bg-adia-cream pb-32 px-6 lg:px-12">
+    <section className="w-full bg-adia-cream pb-16 md:pb-32 px-5 md:px-6 lg:px-12">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24 -mt-16 relative z-10">
         
         {/* Left Side: The Atelier Info */}
@@ -46,7 +46,7 @@ export default function ContactLayout() {
                   type="text" 
                   id="firstName" 
                   placeholder="First Name" 
-                  className="w-full bg-transparent border-b border-adia-charcoal/20 py-3 text-adia-charcoal focus:outline-none focus:border-adia-gold transition-colors font-[family-name:var(--font-cormorant)] text-lg placeholder:text-adia-charcoal/40"
+                  className="w-full bg-transparent border-b border-adia-charcoal/50 py-3 text-adia-charcoal focus:outline-none focus:border-adia-gold transition-colors font-[family-name:var(--font-cormorant)] text-lg placeholder:text-adia-charcoal/40"
                   required
                 />
               </div>
@@ -55,7 +55,7 @@ export default function ContactLayout() {
                   type="text" 
                   id="lastName" 
                   placeholder="Last Name" 
-                  className="w-full bg-transparent border-b border-adia-charcoal/20 py-3 text-adia-charcoal focus:outline-none focus:border-adia-gold transition-colors font-[family-name:var(--font-cormorant)] text-lg placeholder:text-adia-charcoal/40"
+                  className="w-full bg-transparent border-b border-adia-charcoal/50 py-3 text-adia-charcoal focus:outline-none focus:border-adia-gold transition-colors font-[family-name:var(--font-cormorant)] text-lg placeholder:text-adia-charcoal/40"
                   required
                 />
               </div>
@@ -67,7 +67,7 @@ export default function ContactLayout() {
                   type="email" 
                   id="email" 
                   placeholder="Email Address" 
-                  className="w-full bg-transparent border-b border-adia-charcoal/20 py-3 text-adia-charcoal focus:outline-none focus:border-adia-gold transition-colors font-[family-name:var(--font-cormorant)] text-lg placeholder:text-adia-charcoal/40"
+                  className="w-full bg-transparent border-b border-adia-charcoal/50 py-3 text-adia-charcoal focus:outline-none focus:border-adia-gold transition-colors font-[family-name:var(--font-cormorant)] text-lg placeholder:text-adia-charcoal/40"
                   required
                 />
               </div>
@@ -76,7 +76,7 @@ export default function ContactLayout() {
                   type="tel" 
                   id="phone" 
                   placeholder="Phone Number (Optional)" 
-                  className="w-full bg-transparent border-b border-adia-charcoal/20 py-3 text-adia-charcoal focus:outline-none focus:border-adia-gold transition-colors font-[family-name:var(--font-cormorant)] text-lg placeholder:text-adia-charcoal/40"
+                  className="w-full bg-transparent border-b border-adia-charcoal/50 py-3 text-adia-charcoal focus:outline-none focus:border-adia-gold transition-colors font-[family-name:var(--font-cormorant)] text-lg placeholder:text-adia-charcoal/40"
                 />
               </div>
             </div>
@@ -85,7 +85,7 @@ export default function ContactLayout() {
               <select 
                 id="inquiryType"
                 defaultValue=""
-                className="w-full bg-transparent border-b border-adia-charcoal/20 py-3 pr-8 text-adia-charcoal focus:outline-none focus:border-adia-gold transition-colors font-[family-name:var(--font-cormorant)] text-lg appearance-none cursor-pointer"
+                className="w-full bg-transparent border-b border-adia-charcoal/50 py-3 pr-8 text-adia-charcoal focus:outline-none focus:border-adia-gold transition-colors font-[family-name:var(--font-cormorant)] text-lg appearance-none cursor-pointer"
               >
                 <option value="" disabled>Nature of Inquiry</option>
                 <option value="bespoke">Custom Creation</option>
@@ -105,7 +105,7 @@ export default function ContactLayout() {
                 id="message" 
                 placeholder="How may we assist you?" 
                 rows={4}
-                className="w-full bg-transparent border-b border-adia-charcoal/20 py-3 text-adia-charcoal focus:outline-none focus:border-adia-gold transition-colors font-[family-name:var(--font-cormorant)] text-lg placeholder:text-adia-charcoal/40 resize-none"
+                className="w-full bg-transparent border-b border-adia-charcoal/50 py-3 text-adia-charcoal focus:outline-none focus:border-adia-gold transition-colors font-[family-name:var(--font-cormorant)] text-lg placeholder:text-adia-charcoal/40 resize-none"
                 required
               />
             </div>

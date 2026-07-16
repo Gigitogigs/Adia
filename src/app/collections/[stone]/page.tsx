@@ -22,7 +22,7 @@ export default async function StoneCollectionPage({ params }: { params: Promise<
     <main className="flex flex-col w-full min-h-screen bg-adia-cream pt-20">
       <StoneCarousel />
       
-      <div className="w-full px-6 py-12 lg:px-12">
+      <div className="w-full px-5 py-8 md:px-6 md:py-12 lg:px-12">
         <h1 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl text-adia-charcoal uppercase tracking-widest mb-4 text-center">
           The <span className="font-[family-name:var(--font-script)] text-adia-violet-dark lowercase text-5xl md:text-6xl mx-2">{validStone}</span> Collection
         </h1>
@@ -31,7 +31,7 @@ export default async function StoneCollectionPage({ params }: { params: Promise<
         {filteredProducts.length > 0 ? (
           <ProductGrid products={filteredProducts} />
         ) : (
-          <div className="text-center py-20 font-[family-name:var(--font-inter)] text-adia-charcoal/50">
+          <div className="text-center py-8 md:py-20 font-[family-name:var(--font-inter)] text-adia-charcoal/50">
             No pieces found in this collection yet.
           </div>
         )}

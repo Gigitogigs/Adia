@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import StoneCarousel from "./components/StoneCarousel";
 import CollectionsSearch from "./components/CollectionsSearch";
 import FilterBar from "./components/FilterBar";
@@ -65,7 +65,7 @@ export default function CollectionsPage() {
   );
 
   // Reset to page 1 when filters change
-  useMemo(() => {
+  useEffect(() => {
     setCurrentPage(1);
   }, [searchQuery, activeCategory, activeStone, activeMetal, sortBy]);
 
@@ -73,7 +73,7 @@ export default function CollectionsPage() {
     <main className="flex flex-col w-full min-h-screen bg-adia-cream">
       
       {/* Lifestyle Hero Section */}
-      <section className="relative w-full h-screen flex items-center justify-center overflow-hidden mb-8">
+      <section className="relative w-full h-[60vh] md:h-screen flex items-center justify-center overflow-hidden mb-8">
         {/* Background Video */}
         <video
           autoPlay
@@ -89,7 +89,7 @@ export default function CollectionsPage() {
         {/* Gradient fade at bottom to hint more content */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/60 pointer-events-none" />
         <div className="relative z-10 text-center flex flex-col items-center">
-          <h1 className="font-[family-name:var(--font-cormorant)] text-5xl md:text-7xl text-white font-light tracking-widest mb-4 drop-shadow-sm">
+          <h1 className="font-[family-name:var(--font-cormorant)] text-3xl md:text-7xl text-white font-medium md:font-light tracking-widest mb-4 drop-shadow-sm px-6">
             THE COLLECTIONS
           </h1>
           <p className="font-[family-name:var(--font-inter)] text-white/90 text-sm md:text-base tracking-[0.2em] uppercase max-w-lg drop-shadow-sm">

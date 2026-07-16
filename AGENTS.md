@@ -28,6 +28,7 @@ Our build will use modular components for easier debugging and reusability.
 ## Typography
 - **Use the brand font variable.** Always reference the font via `font-[family-name:var(--font-cormorant)]` (or the equivalent CSS variable once Moara is installed). Never hardcode `font-family` strings in JSX.
 - **Maintain a clear type hierarchy.** One `<h1>` per page. Use `<h2>` for section headings, `<h3>` for card headings, `<p>` for body text.
+- **Mobile Section Headings.** On mobile views, favor bolder font weights (e.g., `font-medium` or `font-semibold`) for section headings instead of excessively large font sizes. Use `md:font-light` to retain the airy luxury feel on desktop.
 - **Generous letter-spacing for display text.** Luxury brand headings should use `tracking-widest` or custom `tracking-[0.25em]` to reinforce the premium feel.
 
 ## Images

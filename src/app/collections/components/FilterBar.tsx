@@ -3,6 +3,7 @@
 import { useState } from "react";
 import FilterPanel from "./FilterPanel";
 import SortPanel from "./SortPanel";
+import { NAVBAR_HEIGHT } from "@/app/lib/constants";
 
 interface FilterBarProps {
   activeCategory: string;
@@ -36,7 +37,7 @@ export default function FilterBar({
 
   return (
     <>
-      <div className="w-full bg-adia-cream sticky top-[64px] z-40 border-y border-adia-charcoal/10 shadow-sm transition-all">
+      <div className={`w-full bg-adia-cream sticky top-[${NAVBAR_HEIGHT}px] z-40 border-y border-adia-charcoal/10 shadow-sm transition-all`}>
         <div className="w-full flex justify-end items-center px-6 lg:px-12 py-4 gap-8">
           
           <button 

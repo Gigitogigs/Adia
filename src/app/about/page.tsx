@@ -7,7 +7,7 @@ export default function AboutPage() {
     <main className="flex flex-col w-full min-h-screen">
 
       {/* Full-Viewport Hero */}
-      <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative w-full h-[60vh] md:h-screen flex items-center justify-center overflow-hidden">
         <Image
           src="/images/about-hero.jpg"
           alt="Adia — Our Story"
@@ -24,7 +24,7 @@ export default function AboutPage() {
           <p className="font-[family-name:var(--font-inter)] text-adia-gold text-xs tracking-[0.4em] uppercase mb-6">
             Our Heritage &amp; Promise
           </p>
-          <h1 className="font-[family-name:var(--font-cormorant)] text-[clamp(3.5rem,8vw,7rem)] leading-none text-white font-light tracking-widest mb-6">
+          <h1 className="font-[family-name:var(--font-cormorant)] text-[clamp(2.5rem,6vw,7rem)] leading-none text-white font-medium md:font-light tracking-widest mb-6">
             The Adia <span className="font-[family-name:var(--font-script)] italic text-adia-gold">Vision</span>
           </h1>
         </div>

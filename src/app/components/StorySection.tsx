@@ -5,12 +5,12 @@ export default function StorySection() {
     <section 
       id="story" 
       aria-label="L'Éclat Éternel Feature"
-      className="relative w-full bg-adia-cream py-32 overflow-hidden"
+      className="relative w-full bg-adia-cream py-8 md:py-32 overflow-hidden"
     >
       {/* Decorative background element */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-adia-rose/10 -skew-x-12 transform origin-top-right" />
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center lg:items-start gap-16 lg:gap-8">
+      <div className="relative max-w-7xl mx-auto px-5 md:px-6 lg:px-12 flex flex-col lg:flex-row items-center lg:items-start gap-16 lg:gap-8">
         
         {/* Left side: Editorial Feature Images */}
         <div className="w-full lg:w-1/2 relative flex justify-center lg:justify-start">

@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function BrandStory() {
   return (
     <section className="w-full bg-adia-cream pt-32 pb-32">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row gap-16 md:gap-24 items-center">
+      <div className="max-w-7xl mx-auto px-5 md:px-6 lg:px-12 flex flex-col md:flex-row gap-16 md:gap-24 items-center">
         
         {/* Left Side: Editorial Image */}
         <div className="w-full md:w-1/2 relative h-[50vh] md:h-[60vh] overflow-hidden">

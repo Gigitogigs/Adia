@@ -29,7 +29,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange }: Pa
   };
 
   return (
-    <div className="w-full flex justify-center items-center gap-6 py-16">
+    <div className="w-full flex justify-center items-center gap-6 py-8 md:py-16">
       <button 
         onClick={handlePrev}
         disabled={currentPage === 1}

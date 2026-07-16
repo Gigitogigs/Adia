@@ -6,7 +6,7 @@ export default function HeroSection() {
     <section
       id="hero"
       aria-label="Hero section"
-      className="relative h-screen w-full overflow-hidden"
+      className="relative h-[75vh] md:h-screen w-full overflow-hidden"
     >
       {/* Background solid color taking up remaining space */}
       <div className="absolute inset-0 bg-adia-violet-dark" />
@@ -37,7 +37,7 @@ export default function HeroSection() {
           {/* Brand name */}
           <h1
             id="hero-brand-name"
-            className="font-[family-name:var(--font-script)] text-[clamp(6rem,12vw,10rem)] font-medium leading-none text-adia-cream pb-2 uppercase animate-slide-up-bottom [animation-delay:100ms] [animation-fill-mode:both]"
+            className="font-[family-name:var(--font-script)] text-[clamp(4rem,12vw,10rem)] font-medium leading-none text-adia-cream pb-2 uppercase animate-slide-up-bottom [animation-delay:100ms] [animation-fill-mode:both]"
           >
             ADIA
           </h1>

@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="w-full bg-adia-violet-dark text-adia-cream border-t border-adia-gold/20">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-24 pb-12">
+      <div className="max-w-7xl mx-auto px-5 md:px-6 lg:px-12 pt-12 pb-12 md:pt-24 md:pb-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 lg:gap-8 mb-24">
           
           {/* Column 1: Brand */}
@@ -22,11 +22,11 @@ export default function Footer() {
               Collections
             </h3>
             <ul className="flex flex-col gap-4 font-[family-name:var(--font-cormorant)] text-base text-adia-cream/70">
-              <li><Link href="#amethyst" className="hover:text-adia-gold transition-colors">Amethyst</Link></li>
-              <li><Link href="#diamond" className="hover:text-adia-gold transition-colors">Diamond</Link></li>
-              <li><Link href="#emerald" className="hover:text-adia-gold transition-colors">Emerald</Link></li>
-              <li><Link href="#ruby" className="hover:text-adia-gold transition-colors">Ruby</Link></li>
-              <li><Link href="#sapphire" className="hover:text-adia-gold transition-colors">Sapphire</Link></li>
+              <li><Link href="/collections?stone=Amethyst" className="hover:text-adia-gold transition-colors">Amethyst</Link></li>
+              <li><Link href="/collections?stone=Diamond" className="hover:text-adia-gold transition-colors">Diamond</Link></li>
+              <li><Link href="/collections?stone=Emerald" className="hover:text-adia-gold transition-colors">Emerald</Link></li>
+              <li><Link href="/collections?stone=Ruby" className="hover:text-adia-gold transition-colors">Ruby</Link></li>
+              <li><Link href="/collections?stone=Sapphire" className="hover:text-adia-gold transition-colors">Sapphire</Link></li>
             </ul>
           </div>
 

@@ -1,7 +1,7 @@
 export default function PrivacyPage() {
   return (
     <div className="flex flex-col w-full">
-      <h2 className="font-[family-name:var(--font-cormorant)] text-4xl lg:text-5xl text-adia-charcoal mb-8 font-light">
+      <h2 className="font-[family-name:var(--font-cormorant)] text-4xl lg:text-5xl text-adia-charcoal mb-8 font-medium md:font-light">
         Privacy Policy
       </h2>
       

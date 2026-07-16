@@ -95,7 +95,7 @@ export default function LookbookSection() {
           {LOOKBOOK_ITEMS.map((item, index) => (
             <div 
               key={item.id}
-              className="w-screen h-full flex-shrink-0 flex items-center justify-center relative px-6 md:px-24"
+              className="w-screen h-full flex-shrink-0 flex items-center justify-center relative px-5 md:px-24"
             >
               {/* Layout for each page of the lookbook */}
               <div className="w-full max-w-7xl flex flex-col md:flex-row items-center gap-12 md:gap-24 relative z-10">
@@ -130,7 +130,7 @@ export default function LookbookSection() {
                     href="/collections"
                     className="inline-flex w-fit items-center gap-3 font-[family-name:var(--font-cormorant)] text-sm font-light tracking-[0.2em] text-adia-cream uppercase transition-colors duration-300 hover:text-adia-gold group"
                   >
-                    <span className="border-b border-adia-gold pb-1">Explorer (Explore)</span>
+                    <span className="border-b border-adia-gold pb-1">Explore</span>
                     <span className="transition-transform duration-300 group-hover:translate-x-2 text-adia-gold">→</span>
                   </Link>
                 </div>

@@ -64,7 +64,7 @@ export default function FeaturedGemsSection() {
       {/* Decorative texture overlay to mimic old paper/canvas */}
       <div className="absolute inset-0 opacity-5 pointer-events-none" style={{ backgroundImage: "radial-gradient(#423155 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row gap-16 md:gap-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-5 md:px-6 lg:px-12 flex flex-col md:flex-row gap-16 md:gap-8 relative z-10">
         
         {/* Left: The Ledger Index */}
         <div className="w-full md:w-5/12 flex flex-col justify-center">

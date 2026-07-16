@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Product } from "../data/productData";
+import { formatPrice } from "@/app/lib/format";
 
 import Link from "next/link";
 
@@ -15,15 +16,11 @@ export default function ProductCard({ product, size = "normal" }: { product: Pro
     setIsBookmarked(!isBookmarked);
   };
 
-  const formattedPrice = new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-    maximumFractionDigits: 0,
-  }).format(product.price);
+  const formattedPrice = formatPrice(product.price);
 
   const heightClasses = size === "small" 
-    ? "h-[45vh] md:h-[40vh] lg:h-[60vh]" 
-    : "h-[60vh] md:h-[50vh] lg:h-[80vh]";
+    ? "h-[35vh] md:h-[40vh] lg:h-[60vh]" 
+    : "h-[40vh] md:h-[50vh] lg:h-[80vh]";
 
   return (
     <Link 
@@ -56,29 +53,22 @@ export default function ProductCard({ product, size = "normal" }: { product: Pro
         )}
       </button>
 
-      {/* Dark Overlay (Fades in on hover) */}
-      <div className="absolute inset-0 bg-adia-charcoal/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out" />
+      {/* Overlay: Gradient on mobile for text legibility, solid dark on desktop hover */}
+      <div className="absolute inset-0 bg-gradient-to-t from-adia-charcoal/90 via-transparent to-transparent md:bg-none md:bg-adia-charcoal/70 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 ease-in-out" />
 
-      {/* Default State: Title at bottom */}
-      <div className="absolute inset-x-0 bottom-0 p-8 flex flex-col items-center text-center transition-opacity duration-500 group-hover:opacity-0 z-10">
-        <h3 className="font-[family-name:var(--font-cormorant)] text-2xl text-adia-gold tracking-wide drop-shadow-md">
-          {product.name}
-        </h3>
-      </div>
-
-      {/* Hover State: Content Box */}
-      <div className="absolute inset-x-0 bottom-0 p-8 flex flex-col items-center text-center opacity-0 translate-y-8 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-700 ease-out z-10">
-        <p className="font-[family-name:var(--font-cormorant)] text-xs tracking-[0.2em] text-adia-gold uppercase mb-2">
+      {/* Content Box: Always visible on mobile, hover-reveal on desktop */}
+      <div className="absolute inset-x-0 bottom-0 p-2 md:p-8 flex flex-col items-center text-center z-10 md:opacity-0 md:translate-y-8 md:group-hover:opacity-100 md:group-hover:translate-y-0 transition-all duration-700 ease-out">
+        <p className="hidden md:block font-[family-name:var(--font-cormorant)] text-xs tracking-[0.2em] text-adia-gold uppercase mb-2">
           {product.stone} · {product.metal}
         </p>
-        <h3 className="font-[family-name:var(--font-cormorant)] text-2xl text-adia-cream mb-2 tracking-wide">
+        <h3 className="font-[family-name:var(--font-cormorant)] text-base md:text-2xl text-adia-cream mb-1 md:mb-2 tracking-wide leading-tight px-1">
           {product.name}
         </h3>
-        <p className="font-[family-name:var(--font-cormorant)] text-sm text-adia-cream/70 mb-6 max-w-[20ch]">
+        <p className="hidden md:block font-[family-name:var(--font-cormorant)] text-sm text-adia-cream/70 mb-6 max-w-[20ch]">
           {product.description}
         </p>
-        <div className="flex flex-col items-center gap-4 w-full">
-          <span className="font-[family-name:var(--font-cormorant)] text-lg text-adia-gold tracking-widest">
+        <div className="flex flex-col items-center w-full">
+          <span className="font-[family-name:var(--font-cormorant)] text-[11px] md:text-lg text-adia-gold tracking-widest mt-1 md:mt-0">
             {formattedPrice}
           </span>
         </div>
