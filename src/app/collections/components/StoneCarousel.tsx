@@ -40,7 +40,7 @@ export default function StoneCarousel() {
       </div>
 
       <div className="px-6 lg:px-12 mb-8 relative z-10 text-center">
-        <h2 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-medium md:font-light text-adia-charcoal uppercase tracking-[0.2em]">
+        <h2 className="font-[family-name:var(--font-cormorant)] text-2xl sm:text-3xl md:text-5xl font-medium md:font-light text-adia-charcoal uppercase tracking-[0.2em]">
           Explore The Gems
         </h2>
         <div className="h-px w-24 bg-adia-gold mx-auto mt-4" />
