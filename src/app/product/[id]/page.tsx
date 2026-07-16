@@ -6,16 +6,17 @@ import ProductAccordion from "@/app/components/ProductAccordion";
 import ProductGallery from "@/app/product/components/ProductGallery";
 import { formatPrice } from "@/app/lib/format";
 import { NAVBAR_HEIGHT } from "@/app/lib/constants";
+import { getAssetUrl } from "@/utils/assetUrl";
 
 // Mock helper to get gallery images based on stone type
 const getGalleryImages = (product: Product): string[] => {
   const GALLERY_MAP: Record<string, string[]> = {
-    Diamond: ["/images/Diamond/diamond-1.jpg", "/images/Diamond/diamond-2.jpg", "/images/Diamond/109493834686009542.jpg"],
-    Emerald: ["/images/Emerald/emerald-1.jpg", "/images/Emerald/emerald-2.jpg", "/images/Emerald/heeee.jpg"],
-    Ruby: ["/images/Ruby/ruby-1.jpg", "/images/Ruby/ruby-2.jpg", "/images/Ruby/ruby-3.jpg"],
-    Sapphire: ["/images/Sapphire/sapphire-1.jpg", "/images/Sapphire/sapphire-2.jpg", "/images/Sapphire/sapphire-3.jpg"],
-    Amethyst: ["/images/Amethyst/amethyst-1.jpg", "/images/Amethyst/amethyst-3.jpg", "/images/Amethyst/amethyst-accent.jpg"],
-    Gold: ["/images/Gold-Bracelet-Stack-Inspiration.jpg", "/images/Gold/70437491205309.jpg", "/images/story-lifestyle.jpg"]
+    Diamond: [getAssetUrl("/images/Diamond/diamond-1.jpg"), getAssetUrl("/images/Diamond/diamond-2.jpg"), getAssetUrl("/images/Diamond/109493834686009542.jpg")],
+    Emerald: [getAssetUrl("/images/Emerald/emerald-1.jpg"), getAssetUrl("/images/Emerald/emerald-2.jpg"), getAssetUrl("/images/Emerald/heeee.jpg")],
+    Ruby: [getAssetUrl("/images/Ruby/ruby-1.jpg"), getAssetUrl("/images/Ruby/ruby-2.jpg"), getAssetUrl("/images/Ruby/ruby-3.jpg")],
+    Sapphire: [getAssetUrl("/images/Sapphire/sapphire-1.jpg"), getAssetUrl("/images/Sapphire/sapphire-2.jpg"), getAssetUrl("/images/Sapphire/sapphire-3.jpg")],
+    Amethyst: [getAssetUrl("/images/Amethyst/amethyst-1.jpg"), getAssetUrl("/images/Amethyst/amethyst-3.jpg"), getAssetUrl("/images/Amethyst/amethyst-accent.jpg")],
+    Gold: [getAssetUrl("/images/Gold-Bracelet-Stack-Inspiration.jpg"), getAssetUrl("/images/Gold/70437491205309.jpg"), getAssetUrl("/images/story-lifestyle.jpg")]
   };
 
   const images = GALLERY_MAP[product.stone] || [product.image, product.image, product.image];

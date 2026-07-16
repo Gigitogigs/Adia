@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { getAssetUrl } from "@/utils/assetUrl";
 
 export default function StorySection() {
   return (
@@ -18,7 +19,7 @@ export default function StorySection() {
           {/* Lifestyle backdrop */}
           <div className="relative w-3/4 h-[60vh] md:h-[70vh] min-h-[500px] z-0 grayscale-[20%]">
             <Image
-              src="/images/life in black.jpg"
+              src={getAssetUrl("/images/life in black.jpg")}
               alt="Adia elegant lifestyle"
               fill
               quality={60}
@@ -30,7 +31,7 @@ export default function StorySection() {
           {/* Highlighted Jewel (Overlapping) */}
           <div className="absolute -bottom-16 -right-4 md:-right-8 w-2/3 h-[45vh] min-h-[350px] z-10 border-[8px] border-adia-cream shadow-2xl">
             <Image
-              src="/images/hans-bracelet-671789_1920.jpg"
+              src={getAssetUrl("/images/hans-bracelet-671789_1920.jpg")}
               alt="L'Éclat Éternel rings"
               fill
               quality={60}
@@ -83,7 +84,7 @@ export default function StorySection() {
           
           <div className="w-7/12 relative aspect-square border-[4px] border-adia-cream shadow-lg">
             <Image
-              src="/images/hans-bracelet-671789_1920.jpg"
+              src={getAssetUrl("/images/hans-bracelet-671789_1920.jpg")}
               alt="L'Éclat Éternel rings"
               fill
               quality={60}

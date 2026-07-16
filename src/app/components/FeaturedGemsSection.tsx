@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { getAssetUrl } from "@/utils/assetUrl";
 
 const GEMS = [
   {
@@ -9,9 +10,9 @@ const GEMS = [
     name: "Amethyst",
     description: "Deep, mysterious purples that carry the quiet strength of royalty and the wisdom of the ancients.",
     images: [
-      "/images/Amethyst/amethyst-1.jpg",
-      "/images/Amethyst/amethyst-3.jpg",
-      "/images/Amethyst/188306828165091116.jpg"
+      getAssetUrl("/images/Amethyst/amethyst-1.jpg"),
+      getAssetUrl("/images/Amethyst/amethyst-3.jpg"),
+      getAssetUrl("/images/Amethyst/188306828165091116.jpg")
     ]
   },
   {
@@ -19,9 +20,9 @@ const GEMS = [
     name: "Diamond",
     description: "The ultimate expression of light and endurance. Flawless clarity that remains forever untamed.",
     images: [
-      "/images/Diamond/diamond-1.jpg",
-      "/images/Diamond/diamond-2.jpg",
-      "/images/Diamond/351912467107900.jpg"
+      getAssetUrl("/images/Diamond/diamond-1.jpg"),
+      getAssetUrl("/images/Diamond/diamond-2.jpg"),
+      getAssetUrl("/images/Diamond/351912467107900.jpg")
     ]
   },
   {
@@ -29,9 +30,9 @@ const GEMS = [
     name: "Emerald",
     description: "Rich, verdant greens that evoke the lushness of nature and the allure of hidden gardens.",
     images: [
-      "/images/Emerald/emerald-1.jpg",
-      "/images/Emerald/emerald-2.jpg",
-      "/images/Emerald/49258189670365884.jpg"
+      getAssetUrl("/images/Emerald/emerald-1.jpg"),
+      getAssetUrl("/images/Emerald/emerald-2.jpg"),
+      getAssetUrl("/images/Emerald/49258189670365884.jpg")
     ]
   },
   {
@@ -39,9 +40,9 @@ const GEMS = [
     name: "Ruby",
     description: "A passionate, vibrant red. The stone of life, burning with an unquenchable internal fire.",
     images: [
-      "/images/Ruby/ruby-feat-1.jpg",
-      "/images/Ruby/ruby-feat-2.jpg",
-      "/images/Ruby/ruby-feat-3.jpg"
+      getAssetUrl("/images/Ruby/ruby-feat-1.jpg"),
+      getAssetUrl("/images/Ruby/ruby-feat-2.jpg"),
+      getAssetUrl("/images/Ruby/ruby-feat-3.jpg")
     ]
   },
   {
@@ -49,9 +50,9 @@ const GEMS = [
     name: "Sapphire",
     description: "Celestial blues that capture the profound depth of the midnight sky and the endless ocean.",
     images: [
-      "/images/Sapphire/sapphire-1.jpg",
-      "/images/Sapphire/sapphire-2.jpg",
-      "/images/Sapphire/sapphire-3.jpg"
+      getAssetUrl("/images/Sapphire/sapphire-1.jpg"),
+      getAssetUrl("/images/Sapphire/sapphire-2.jpg"),
+      getAssetUrl("/images/Sapphire/sapphire-3.jpg")
     ]
   }
 ];

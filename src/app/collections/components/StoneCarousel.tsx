@@ -4,14 +4,15 @@ import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { GEMS_LIST } from "../data/productData";
+import { getAssetUrl } from "@/utils/assetUrl";
 
 const STONE_DATA: Record<string, { image: string }> = {
-  Amethyst: { image: "/images/Amethyst/amethyst-1.jpg" },
-  Diamond: { image: "/images/Diamond/18225573488365493.jpg" },
-  Emerald: { image: "/images/Emerald/8373949304225451.jpg" },
-  Ruby: { image: "/images/Ruby/Ruby Moissanite Pendant Necklace, Sterling Silver Diamond Halo, July Birthstone.jpg" },
-  Sapphire: { image: "/images/Sapphire/Blueberry Tanzanite Couture Diamond Necklace.jpg" },
-  Gold: { image: "/images/Gold/70437491205309.jpg" },
+  Amethyst: { image: getAssetUrl("/images/Amethyst/amethyst-1.jpg") },
+  Diamond: { image: getAssetUrl("/images/Diamond/18225573488365493.jpg") },
+  Emerald: { image: getAssetUrl("/images/Emerald/8373949304225451.jpg") },
+  Ruby: { image: getAssetUrl("/images/Ruby/Ruby Moissanite Pendant Necklace, Sterling Silver Diamond Halo, July Birthstone.jpg") },
+  Sapphire: { image: getAssetUrl("/images/Sapphire/Blueberry Tanzanite Couture Diamond Necklace.jpg") },
+  Gold: { image: getAssetUrl("/images/Gold/70437491205309.jpg") },
 };
 
 export default function StoneCarousel() {

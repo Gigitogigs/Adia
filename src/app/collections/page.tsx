@@ -7,6 +7,7 @@ import FilterBar from "./components/FilterBar";
 import ProductGrid from "./components/ProductGrid";
 import Pagination from "./components/Pagination";
 import { mockProducts } from "./data/productData";
+import { getAssetUrl } from "@/utils/assetUrl";
 
 const ITEMS_PER_PAGE = 18;
 
@@ -81,7 +82,7 @@ export default function CollectionsPage() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="/videos/hero-jewels-3-opt.mp4" type="video/mp4" />
+          <source src={getAssetUrl("/videos/hero-jewels-3-opt.mp4")} type="video/mp4" />
         </video>
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/30" />

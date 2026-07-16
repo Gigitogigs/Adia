@@ -3,6 +3,7 @@
 import { useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { getAssetUrl } from "@/utils/assetUrl";
 
 interface CtaSectionProps {
   headline?: React.ReactNode;
@@ -67,7 +68,7 @@ export default function CtaSection({
           </video>
         ) : (
           <Image
-            src="/images/hans-bracelet-671789_1920.jpg"
+            src={getAssetUrl("/images/hans-bracelet-671789_1920.jpg")}
             alt="Adia custom jewelry"
             fill
             quality={60}

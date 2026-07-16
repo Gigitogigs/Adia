@@ -3,6 +3,7 @@
 import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { getAssetUrl } from "@/utils/assetUrl";
 
 const LOOKBOOK_ITEMS = [
   {
@@ -10,28 +11,28 @@ const LOOKBOOK_ITEMS = [
     title: "The Golden Era",
     subtitle: "Timeless Bracelets",
     description: "Layered to perfection. Our gold bracelet stacks are designed to be mixed, matched, and cherished.",
-    image: "/images/Gold-Bracelet-Stack-Inspiration.jpg",
+    image: getAssetUrl("/images/Gold-Bracelet-Stack-Inspiration.jpg"),
   },
   {
     id: 2,
     title: "Luminous Pearls",
     subtitle: "Ocean's Treasure",
     description: "Sourced from the deepest waters, each pearl is hand-selected for its immaculate luster and perfect spherical form.",
-    image: "/images/rishika73978-pearl-8012322_1920.jpg",
+    image: getAssetUrl("/images/rishika73978-pearl-8012322_1920.jpg"),
   },
   {
     id: 3,
     title: "Royal Amethyst",
     subtitle: "The Purple Rhinestone Set",
     description: "A commanding presence. This necklace set is reserved for moments that demand absolute royalty.",
-    image: "/images/Purple-rhinestone-necklace-set.jpg",
+    image: getAssetUrl("/images/Purple-rhinestone-necklace-set.jpg"),
   },
   {
     id: 4,
     title: "Modern Minimalist",
     subtitle: "Everyday Elegance",
     description: "Sleek lines and understated brilliance. Pieces designed to seamlessly transition from day to night.",
-    image: "/images/pexels-accessory-1867039_1920.jpg",
+    image: getAssetUrl("/images/pexels-accessory-1867039_1920.jpg"),
   }
 ];
 

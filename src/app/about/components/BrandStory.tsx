@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { getAssetUrl } from "@/utils/assetUrl";
 
 export default function BrandStory() {
   return (
@@ -8,7 +9,7 @@ export default function BrandStory() {
         {/* Left Side: Editorial Image */}
         <div className="w-full md:w-1/2 relative h-[40vh] md:h-auto md:min-h-[60vh] overflow-hidden">
           <Image 
-            src="/images/Diamond/351912467107900.jpg" 
+            src={getAssetUrl("/images/story-lifestyle.jpg")} 
             alt="Adia elegance and beauty"
             fill
             className="object-cover object-center"

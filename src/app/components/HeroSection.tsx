@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { getAssetUrl } from "@/utils/assetUrl";
 
 export default function HeroSection() {
   return (
@@ -14,7 +15,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="relative w-full h-full md:max-w-3xl">
           <Image
-            src="/images/beauty-and-elegance.jpg"
+            src={getAssetUrl("/images/beauty-and-elegance.jpg")}
             alt="Adia jewellery model portrait"
             fill
             priority

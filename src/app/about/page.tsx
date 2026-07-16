@@ -1,6 +1,7 @@
 import Image from "next/image";
 import BrandStory from "./components/BrandStory";
 import CtaSection from "@/app/components/CtaSection";
+import { getAssetUrl } from "@/utils/assetUrl";
 
 export default function AboutPage() {
   return (
@@ -9,7 +10,7 @@ export default function AboutPage() {
       {/* Full-Viewport Hero */}
       <section className="relative w-full h-[60vh] md:h-screen flex items-center justify-center overflow-hidden">
         <Image
-          src="/images/about-hero.jpg"
+          src={getAssetUrl("/images/about-hero.jpg")}
           alt="Adia — Our Story"
           fill
           className="object-cover object-center"
@@ -39,7 +40,7 @@ export default function AboutPage() {
           <>Let&apos;s Create <span className="text-adia-gold italic">Something</span> Together</>
         }
         subtext="Every masterpiece begins with a single conversation. Share your vision with our artisans and watch it take shape in gold and gemstone."
-        videoSrc="/videos/hero-jewels-opt.mp4"
+        videoSrc={getAssetUrl("/videos/hero-jewels-opt.mp4")}
       />
 
     </main>
