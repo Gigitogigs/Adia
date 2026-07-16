@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState, useMemo } from "react";
 import StoneCarousel from "./components/StoneCarousel";
 import CollectionsSearch from "./components/CollectionsSearch";
@@ -69,7 +70,34 @@ export default function CollectionsPage() {
   }, [searchQuery, activeCategory, activeStone, activeMetal, sortBy]);
 
   return (
-    <main className="flex flex-col w-full min-h-screen bg-adia-cream pt-20">
+    <main className="flex flex-col w-full min-h-screen bg-adia-cream">
+      
+      {/* Lifestyle Hero Section */}
+      <section className="relative w-full h-screen flex items-center justify-center overflow-hidden mb-8">
+        {/* Background Video */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/videos/hero-jewels-2.mp4" type="video/mp4" />
+        </video>
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/30" />
+        {/* Gradient fade at bottom to hint more content */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/60 pointer-events-none" />
+        <div className="relative z-10 text-center flex flex-col items-center">
+          <h1 className="font-[family-name:var(--font-cormorant)] text-5xl md:text-7xl text-white font-light tracking-widest mb-4 drop-shadow-sm">
+            THE COLLECTIONS
+          </h1>
+          <p className="font-[family-name:var(--font-inter)] text-white/90 text-sm md:text-base tracking-[0.2em] uppercase max-w-lg drop-shadow-sm">
+            Discover pieces that define everyday luxury
+          </p>
+        </div>
+      </section>
+
       <StoneCarousel />
       
       <CollectionsSearch 

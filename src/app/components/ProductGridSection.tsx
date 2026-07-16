@@ -19,7 +19,7 @@ export default function ProductGridSection() {
         </div>
 
         {/* The Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full gap-3 p-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full gap-3 p-3">
           {PRODUCTS.map((product) => (
             <Link 
               href={`/product/${product.id}`}
